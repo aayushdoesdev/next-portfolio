@@ -2,14 +2,16 @@
 
 import Image from "next/image";
 import {motion} from "framer-motion"
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const Homepage = () => {
   return (
+    <>
     <motion.div className="h-full" initial={{y: "-200vh"}} animate={{y: "0"}} transition={{duration:1.2, ease: "easeOut"}}>
-    <div className="h-[100vh] bg-[#171717] overflow-hidden flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl-48">
+    <div className="h-[100vh] bg-[#171717] overflow-hidden flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl-48 gap-8 lg:items-center lg:justify-around">
       {/* IMAGE CONTAINER */}
-      <div className="h-1/2 relative lg:h-full lg:w-1/2">
-        <Image src="/hero.png" alt="image" fill className="object-contain" />
+      <div className="h-1/2 relative lg:max-w-md lg:h-full lg:w-1/2">
+        <Image src="/profile.jpg" alt="image" fill className="object-contain" />
       </div>
       {/* TEXT CONTAINER */}
       <div className="h-1/2 flex flex-col gap-8 items-center justify-center lg:h-full lg:w-1/2">
@@ -26,8 +28,10 @@ const Homepage = () => {
           <button className="p-4 rounded-lg ring-1 ring-black bg-black">Contact Me</button>
         </div>
       </div>
+    
     </div>
     </motion.div>
+    </>
   );
 };
 
